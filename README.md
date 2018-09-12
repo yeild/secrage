@@ -43,6 +43,6 @@ storage.setItem('foo', 'bar')
 
 ### Notice
 + storage.setItem(key, value) 时,你不能也不应该将你的key设为中文.
-
++ 使用window.btoa进行转码, 如果浏览器不支持，会直接存取未转码的内容.
 
 
