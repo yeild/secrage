@@ -3,22 +3,20 @@ Your storage is a secret
 
 ### What's Secrage?
 
-Secrage is named of *secret* + *storage*. 
+Secrage is named of *secret* + *storage*, a wrapper of native localStorage/sessionStorage with only 2kb.
 
-Secrage使用window.btoa将你的sessionStorage/localStorage编码, 以提高web存储一定的安全性和隐秘性.
-并且不需要繁琐的手动JSON.stringify/JSON.parse, 验证数据是否为空等.
-同时使用 encodeURIComponent 编码中文，使中文内容也可以被window.btoa编码.
+Secrage会自动调用JSON.stringify/JSON.parse转换对象与JSON字符串, 省去手动转换的麻烦, 然后使用window.btoa将你的数key/value编码后存入localStorage/sessionStorage, 使数据更加隐蔽. 
+同时会将null/undefined转换为空字符串, 并使用encodeURIComponent编码中文, 使中文内容也可以被window.btoa编码.
 
-通常你必须繁琐的转换对象/JSON字符串, 并且被保存的内容是明文的:
+****
+
+通常你必须手动调用JSON.stringify/JSON.parse, 并且被保存的内容是明文的:
 
 ![](http://ooqymz3vm.bkt.clouddn.com/s_before.png)
 
-现在你可以使用Secrage, 不需要繁琐的转换, 并且存储编码后的数据:
+现在你可以使用Secrage省去这些麻烦, 并且存储编码后的数据:
 
 ![](http://ooqymz3vm.bkt.clouddn.com/s_after.png)
-
-Secrage 在set和get undefined/null 值时会自动转换为空字符串''
-
 
 ### Usage
 
