@@ -42,7 +42,7 @@ storage.setItem('foo', 'bar')
 ```
 
 ### Notice
-+ storage.setItem(key, value) 时,你不能, 也不应该将你的key设为中文.
++ storage.setItem(key, value) 时,你不能也不应该将你的key设为中文.
 
 
 
