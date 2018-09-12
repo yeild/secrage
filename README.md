@@ -22,7 +22,7 @@ Secrage 在set和get undefined/null 值时会自动转换为空字符串''
 
 ### Usage
 
-by npm: 
+npm: 
 ```
 $ npm i secrage -S
 ...
@@ -30,7 +30,7 @@ import { sessionStorage } from 'secrage'
 sessionStorage.setItem('foo', 'bar')
 ```
 
-by \<script>: [download](https://raw.githubusercontent.com/yeild/secrage/master/dist/secrage.min.js)
+or \<script>: [download](https://raw.githubusercontent.com/yeild/secrage/master/dist/secrage.min.js)
 ```
 <script src="[path]/secrage.min.js"></script>
 
