@@ -2,7 +2,7 @@
 
 > Secrage is named of *secret* + *storage*, witch is a wrapper of native localStorage/sessionStorage with only 2kb.
 
-Usually when you using webStorage, you have to invoke JSON.stringify/JSON.parse to transform your object data, and the data is showing as **Plaintext**:
+Usually when you using webStorage, you have to use JSON.stringify/JSON.parse to transform your object data, and the data is showing as **Plaintext**:
 
 ![](https://img2018.cnblogs.com/blog/1150501/201903/1150501-20190312164356439-2083261358.png)
 
@@ -24,7 +24,7 @@ storage.setItem(
 )
 ```
 
-The *window.encodeURIComponent* is used in case of the string to be encoded by window.btoa contains characters outside of the Latin1 range.
+The *window.encodeURIComponent* is invoked in case of the string to be encoded by window.btoa contains characters outside of the Latin1 range.
 
 When invoking storage.get(key), these steps are reverse.
 
@@ -52,7 +52,7 @@ storage.setItem('foo', 'bar')
 You can try it out at [this page](https://yeild.github.io/secrage/demo.html) first.
 
 ### Notice
-+ The behavor of *strinify* is same as JSON.strinify. For example *function* and *undefined* value will be omitted. [See more infomation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#Description)
++ The behavor of *strinify* is same as JSON.strinify. For example *function* and *undefined* value will be omitted. [See more information.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#Description)
 + If your browser doesn't support window.btoa, its step has no effect.
 
 
