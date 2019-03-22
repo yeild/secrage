@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.base')
 
 module.exports = merge(baseConfig, {
   entry: {
-    'secrage': './src/index'
+    'secrage': './src/module'
   },
   output: {
     path: path.resolve(__dirname, '../lib'),
@@ -26,7 +26,7 @@ module.exports = merge(baseConfig, {
       ['lib'],
       {
         root: path.resolve(__dirname, '..'),
-        verbose: true
+        verbose: false
       }
     )
   ],

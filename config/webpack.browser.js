@@ -25,7 +25,7 @@ module.exports = merge(baseConfig, {
       ['dist'],
       {
         root: path.resolve(__dirname, '..'),
-        verbose: true
+        verbose: false
       }
     )
   ]
