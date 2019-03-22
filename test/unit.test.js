@@ -1,0 +1,26 @@
+import { stringify, parse } from '../src/utils/jsonify'
+import { btoa, atob, encode, decode } from '../src/utils/transcoding'
+
+test('stringify(undefined) should be "undefined"', function () {
+  expect(stringify(undefined)).toBe('"undefined"')
+})
+
+test('parse(\'"undefined"\') should be "undefined"', function () {
+  expect(parse('"undefined"')).toBe('undefined')
+})
+
+test('btoa("hello world") should be "aGVsbG8gd29ybGQ="', function () {
+  expect(btoa('hello world')).toBe('aGVsbG8gd29ybGQ=')
+})
+
+test('atob("aGVsbG8gd29ybGQ=") should be "aGVsbG8gd29ybGQ="', function () {
+  expect(atob('aGVsbG8gd29ybGQ=')).toBe('hello world')
+})
+
+test('encode("你好，世界") should be "%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%96%E7%95%8C"', function () {
+  expect(encode('你好，世界')).toBe('%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%96%E7%95%8C')
+})
+
+test('decode("%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%96%E7%95%8C") should be "你好，世界"', function () {
+  expect(decode('%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%96%E7%95%8C')).toBe('你好，世界')
+})

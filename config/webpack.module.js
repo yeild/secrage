@@ -1,14 +1,15 @@
 const path = require('path')
 const merge = require('webpack-merge')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const baseConfig = require('./webpack.base')
 
 module.exports = merge(baseConfig, {
   entry: {
-    'index': './src/index'
+    'secrage': './src/index'
   },
   output: {
     path: path.resolve(__dirname, '../lib'),
-    filename: '[name].js',
+    filename: '[name].min.js',
     libraryTarget: 'commonjs2'
   },
   module: {
@@ -20,5 +21,14 @@ module.exports = merge(baseConfig, {
       }
     ]
   },
+  plugins: [
+    new CleanWebpackPlugin(
+      ['lib'],
+      {
+        root: path.resolve(__dirname, '..'),
+        verbose: true
+      }
+    )
+  ],
   target: 'node'
 })

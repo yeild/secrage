@@ -2,7 +2,7 @@
 
 > Secrage is named of *secret* + *storage*, a wrapper of native localStorage/sessionStorage with only 2kb.
 
-Secrage会自动调用JSON.stringify/JSON.parse转换对象与JSON字符串, 省去手动转换的麻烦, 然后使用window.btoa将你的数key/value编码后存入localStorage/sessionStorage, 使数据更加隐蔽. 
+Secrage会自动调用JSON.stringify/JSON.parse转换对象与JSON字符串, 省去手动转换的麻烦, 然后使用window.btoa将你的数key/value编码后存入localStorage/sessionStorage, 使数据更加隐蔽.
 同时会将null/undefined转换为空字符串, 并使用encodeURIComponent编码中文, 使中文内容也可以被window.btoa编码.
 
 ****

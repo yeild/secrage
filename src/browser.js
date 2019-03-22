@@ -1,6 +1,6 @@
-const { sessionStorage, localStorage } = require('./index')
+const Secrage = require('./index')
 
 window.Secrage = {
-  sessionStorage,
-  localStorage
+  localStorage: new Secrage(window.localStorage),
+  sessionStorage: new Secrage(window.sessionStorage)
 }

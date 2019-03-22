@@ -1,6 +1,7 @@
-import { atob, btoa, encode, decode } from './harmony/transcoding'
-import { parse, stringify } from './harmony/jsonify'
-class Secrage {
+import { atob, btoa, encode, decode } from './utils/transcoding'
+import { parse, stringify } from './utils/jsonify'
+
+export default class Secrage {
   constructor (storage) {
     this.storage = storage
   }
@@ -8,19 +9,21 @@ class Secrage {
   setItem (key, value) {
     this.storage.setItem(
       btoa(key),
-      btoa( // step3.加密
-        encode( // step2.编码中文
-          stringify(value) // step1.转json
+      btoa( // step3. btoa
+        encode( // step2. encode
+          stringify(value) // step1. stringify
         )
       )
     )
   }
 
   getItem (key) {
-    return parse( // step3. 解析json
-      decode( // step2. 解码中文
-        atob( // step1. 解密
-          this.storage.getItem(btoa(key))
+    return parse( // step3. parse
+      decode( // step2. decode
+        atob( // step1. atob
+          this.storage.getItem(
+            btoa(key) // transcode key
+          )
         )
       )
     )
@@ -34,6 +37,3 @@ class Secrage {
     this.storage.clear()
   }
 }
-
-export const sessionStorage = new Secrage(window.sessionStorage)
-export const localStorage = new Secrage(window.localStorage)

@@ -1,5 +1,6 @@
 const path = require('path')
 const merge = require('webpack-merge')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const baseConfig = require('./webpack.base')
 
 module.exports = merge(baseConfig, {
@@ -18,5 +19,14 @@ module.exports = merge(baseConfig, {
         use: 'babel-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(
+      ['dist'],
+      {
+        root: path.resolve(__dirname, '..'),
+        verbose: true
+      }
+    )
+  ]
 })
