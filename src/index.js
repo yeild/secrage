@@ -10,20 +10,18 @@ export default class Secrage {
     this.storage.setItem(
       btoa(key),
       btoa( // step3. btoa
-        encode( // step2. encode
-          stringify(value) // step1. stringify
+        encode( // step2. encodeURIComponent
+          stringify(value) // step1. JSON.stringify
         )
       )
     )
   }
 
   getItem (key) {
-    return parse( // step3. parse
-      decode( // step2. decode
+    return parse( // step3. JSON.parse
+      decode( // step2. decodeURIComponent
         atob( // step1. atob
-          this.storage.getItem(
-            btoa(key) // transcode key
-          )
+          this.storage.getItem(btoa(key))
         )
       )
     )
