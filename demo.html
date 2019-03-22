@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h2> Press F12 to open console and try out!</h2>
+<a href="https://github.com/yeild/secrage">back to GitHub</a>
+<code>
+
+</code>
+
+<script src="dist/secrage.min.js"></script>
+<script>
+  const colors = {
+    keyword: 'color: #d73a49',
+    operator: 'color: black',
+    variable: 'color: black',
+    attribute: 'color: #881391',
+    method: 'color: #ff9641',
+    string: 'color: #6a8759',
+  }
+
+  function printComments (text) {
+    console.log('')
+    console.log(`%c// ${text}`, 'color: gray')
+  }
+
+  console.log(
+    '%cconst %cstorage = window.%cSecrage%c.%csessionStorage',
+    colors.method, colors.variable, colors.attribute, colors.operator, colors.attribute
+  )
+
+  const storage = window.Secrage.sessionStorage
+  printComments('set item')
+  console.log(
+    `storage.%csetItem%c(%c'hello'%c, %c'world'%c)`,
+    colors.method, colors.operator, colors.string, colors.operator, colors.string, colors.operator
+  )
+  storage.setItem('hello', 'world')
+
+  printComments('the Storage looks like:')
+  console.log(sessionStorage)
+
+  printComments('get item')
+  console.log(
+    `storage.%cgetItem%c(%c'hello'%c)`,
+    colors.method, colors.operator, colors.string, colors.operator
+  )
+  console.log(storage.getItem('hello'))
+
+  printComments('now try it yourself!')
+</script>
+</body>
+</html>
