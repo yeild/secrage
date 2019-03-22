@@ -52,8 +52,8 @@ storage.setItem('foo', 'bar')
 You can try it out at [this page](https://yeild.github.io/secrage/demo.html) first.
 
 ### Notice
-+ The behavor of *strinify* is same as JSON.strinify. For example *function* and *undefined* value will be omitted. [See more information.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#Description)
-+ If your browser doesn't support window.btoa, its step has no effect.
++ The encoding behavior is same as JSON.stringify. For example *function* and *undefined* value will be omitted. [See more information.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#Description)
++ If your browser doesn't support window.btoa, this step has no effect.
 
 
 
