@@ -1,6 +1,6 @@
 {
   "name": "secrage",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A lib for using webStorage simply an encrypting the storage data.",
   "main": "lib/secrage.min.js",
   "files":  [

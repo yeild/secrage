@@ -15,7 +15,7 @@ Now you can use Secrage without those bother, and the data will be ciphered(or t
 Secrage will transcode data by 3 steps:
 ```
 storage.setItem(
-  btoa(key),
+  btoa(encode(key)),
   btoa( // step3. btoa
     encode( // step2. encodeURIComponent
       stringify(data) // step1. JSON.stringify
@@ -25,6 +25,7 @@ storage.setItem(
 ```
 
 The *window.encodeURIComponent* is invoked in case of the string to be encoded by window.btoa contains characters outside of the Latin1 range.
+The *key* will be encoded as well.
 
 When invoking storage.get(key), these steps are reverse.
 
@@ -54,6 +55,3 @@ You can try it out at [this page](https://yeild.github.io/secrage/demo.html) fir
 ### Notice
 + The encoding behavior is same as JSON.stringify. For example *function* and *undefined* value will be omitted. [See more information.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#Description)
 + If your browser doesn't support window.btoa, this step has no effect.
-
-
-
