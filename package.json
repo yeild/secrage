@@ -1,7 +1,7 @@
 {
   "name": "secrage",
   "version": "1.0.4",
-  "description": "A lib for using webStorage simply an encrypting the storage data.",
+  "description": "A lib for encrypting data and storing into webStorage.",
   "main": "lib/secrage.min.js",
   "scripts": {
     "test": "jest",
