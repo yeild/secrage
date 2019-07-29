@@ -1,4 +1,4 @@
-const Secrage = require('./index')
+import Secrage from './index'
 
 export const localStorage = new Secrage(window.localStorage)
 

@@ -1,8 +1,13 @@
 {
   "name": "secrage",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A lib for encrypting data and storing into webStorage.",
   "main": "lib/secrage.min.js",
+  "files":  [
+    "lib"
+  ],
+  "homepage": "https://github.com/yeild/secrage",
+  "repository": "https://github.com/yeild/secrage",
   "scripts": {
     "test": "jest",
     "build": "node build"
