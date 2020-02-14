@@ -6,7 +6,7 @@ Usually when you using webStorage, you have to use JSON.stringify/JSON.parse to 
 
 ![](https://img2018.cnblogs.com/blog/1150501/201903/1150501-20190312164356439-2083261358.png)
 
-Now you can use Secrage without those bother, and the data will be ciphered(or to say 'encoded', exactly):
+Now you can use Secrage without those bother, and the data will be encoded:
 
 ![](https://img2018.cnblogs.com/blog/1150501/201903/1150501-20190312164358480-252980411.png)
 
